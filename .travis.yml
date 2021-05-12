@@ -17,6 +17,6 @@ after_success:
   #Take imaegs and push to docker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push yuyi93/multi-client
-  - docker push yuyi93/multi-nginx
-  - docker push yuyi93/multi-server
-  - docker push yuyi93/multi-worker
+  # - docker push yuyi93/multi-nginx
+  # - docker push yuyi93/multi-server
+  # - docker push yuyi93/multi-worker
