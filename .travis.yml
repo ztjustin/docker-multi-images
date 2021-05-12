@@ -10,13 +10,13 @@ script:
 
 
 after_success:
-  - docker build -t multi-client -f ./client/Dockerfile ./client
-  - docker build -t multi-nginx -f ./client/Dockerfile ./nginx
-  - docker build -t multi-server -f ./client/Dockerfile ./server
-  - docker build -t multi-worker -f ./client/Dockerfile ./worker
+  - docker build -t yuyi93/multi-client -f ./client/Dockerfile ./client
+  - docker build -t yuyi93/multi-nginx -f ./client/Dockerfile ./nginx
+  - docker build -t yuyi93/multi-server -f ./client/Dockerfile ./server
+  - docker build -t yuyi93/multi-worker -f ./client/Dockerfile ./worker
   #Take imaegs and push to docker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push multi-client
-  - docker push multi-nginx
-  - docker push multi-server
-  - docker push multi-worker
+  - docker push yuyi93/multi-client
+  - docker push yuyi93/multi-nginx
+  - docker push yuyi93/multi-server
+  - docker push yuyi93/multi-worker
